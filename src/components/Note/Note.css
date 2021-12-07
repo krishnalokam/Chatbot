@@ -1,0 +1,17 @@
+.note {
+    border:1px solid #ccc;
+    border-radius: 15px;
+    width: 50%;   
+    padding:1px; 
+    margin:10px;
+    /* font-size: 0.1rem; */
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.message {
+    font-size: 1rem;
+}

@@ -1,6 +1,6 @@
 import './App.css';
 import Header from "./components/Header";
-import Chat from "./components/Chat";
+import Chat from "./components/chat/Chat";
 
 
 function App() {
@@ -13,4 +13,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 
