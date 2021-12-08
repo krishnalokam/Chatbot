@@ -3,11 +3,11 @@ import Note from "../Note/Note";
 import moment from "moment";
 
 function ChatWindow({sName}) {
-    const messageRef = useRef("");
+   const messageRef = useRef("");
    const [notes,setNotes] = useState([])
     
     useEffect(() => {
-        setNotes([...notes,{title:"Admin",type:"reply",message:"Wecome "+sName}])
+        setNotes([...notes,{title:"Admin",type:"reply",message:"Welcome "+sName}])
     },[]);
 
     function Query(){
@@ -23,9 +23,7 @@ function ChatWindow({sName}) {
         qna.push(replynote);
         messageRef.current.value="";
         setNotes([...notes,...qna]);
-        console.log(qna);
-        // setNotes([...notes,note])                
-        // getReply(query)
+        console.log(qna);        
     }
 
     function getReply(query) {
@@ -33,14 +31,14 @@ function ChatWindow({sName}) {
         let reply = query.search("weather") >=0 
                 ? "Its gonna rain today, please carry an umberella."
                 :"I didnt understand you"
-        let replynote = {title:"Admin",type:"reply",message:reply,time:moment().format("hh:mm a")}
-        // qna.push(replynote);
+        let replynote = {title:"Admin",type:"reply",message:reply,time:moment().format("hh:mm a")}        
         setNotes([...notes,replynote])
+        
     }
     return (
         <div>    
             <div  className="message-area">
-                 { notes.map((note,idx) => <Note key={idx} note={note} /> )}               
+                    { notes.map((note,idx) => <Note key={idx} note={note} /> )}               
             </div>  
             <div style={{width:"57%", margin:"auto" ,padding:"0px 20px"}} > 
                 <input ref={messageRef} type="text"  style={{padding:"10px",width:"80%"}} name="message" placeholder="Type weather ..."></input>
@@ -51,4 +49,3 @@ function ChatWindow({sName}) {
 }
 
 export default ChatWindow;
-            
