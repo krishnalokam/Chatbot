@@ -1,0 +1,43 @@
+array1= []
+
+function parser(message){
+	switch 
+		type == word 
+		print <Span />
+		
+		type == statement 
+		print <Span />
+		
+		type == link
+		print ul  li 
+		
+		type == chip 
+		print <Chip />
+
+}
+
+function identifyType(){
+	searching logic - > regex, algo 
+}
+
+function constMsg()  {
+	return ["udemy", "yt", "w3school"]
+}
+
+const messagesList = ["weather", "cricket" ....] 20,000
+
+const message = {
+	value: "Hi what is the weather like today?",
+	type: "statement"
+}
+
+{
+	value: "weather",
+	type: "word"
+}
+
+{
+	value: "Can you share a few js links?",
+	type: "question"
+}
+

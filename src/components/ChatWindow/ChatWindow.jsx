@@ -15,15 +15,18 @@ function ChatWindow({sName}) {
         let query = messageRef.current.value;
         let note = {title:sName,type:"query",message:query,time:moment().format("hh:mm a")} ;       
         
-        qna.push(note);
-        let reply = query.search("weather") >=0 
-                ? "Its gonna rain today, please carry an umberella."
-                :"I didnt understand you"
-        let replynote = {title:"Admin",type:"reply",message:reply,time:moment().format("hh:mm a")};
-        qna.push(replynote);
-        messageRef.current.value="";
-        setNotes([...notes,...qna]);
-        console.log(qna);        
+        setNotes([...notes,query]);
+        
+        getReply(query)
+        // qna.push(note);
+        // let reply = query.search("weather") >=0 
+        //         ? "Its gonna rain today, please carry an umberella."
+        //         :"I didnt understand you"
+        // let replynote = {title:"Admin",type:"reply",message:reply,time:moment().format("hh:mm a")};
+        // qna.push(replynote);
+        // messageRef.current.value="";
+        // setNotes([...notes,replynote]);
+         
     }
 
     function getReply(query) {
