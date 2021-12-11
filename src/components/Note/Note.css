@@ -2,16 +2,21 @@
     border:1px solid #ccc;
     border-radius: 15px;
     width: 50%;   
-    padding:1px; 
+    padding:5px; 
     margin:10px;
+    background-color: brown;
+    color:gold;
     /* font-size: 0.1rem; */
 }
 
 .title {
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: bold;
 }
-
+.time {
+    color:gold;
+    font-size: 1rem;
+}
 .message {
     font-size: 1rem;
 }

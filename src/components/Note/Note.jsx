@@ -2,15 +2,16 @@ import React from "react";
 import './Note.css';
 
 function Note({note}) {
-    const {title,type,message,time} = note
-    console.log("note :",time);
+    const {author,type,message,time} = note    
    const displayStyle= (type==="query")?{marginLeft:"50%"}:{marginRight:"50%"}
 
-    return <><div className="note" style={displayStyle}>
-        <p className="title">{title}</p>
-        <p className="message">{message}</p>        
+    return <>
+    <div className="note" style={displayStyle}>
+        <p className="title">{author}</p>
+        <p className="message">{message}</p>  
+        <p className="time">{time}</p>      
     </div>
-    <p style={displayStyle}>{time}</p>
+   
     </>
 }
 
