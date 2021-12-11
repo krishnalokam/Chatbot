@@ -2,6 +2,21 @@
   text-align: center;
 }
 
+.header {
+  width: 73%;
+  margin: 0 auto;
+  background-color:brown    ;
+  color: Blue;
+  border-top:3px solid blue;
+  border-left: 3px solid blue;
+  border-right: 3px solid blue;
+}
+
+.header h1 {
+  margin: 0;
+  padding: 20px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
