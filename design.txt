@@ -38,6 +38,6 @@ const message = {
 
 {
 	value: "Can you share a few js links?",
-	type: "question"
+	type: "question2"
 }
 
