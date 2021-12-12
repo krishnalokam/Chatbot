@@ -16,8 +16,11 @@ const responses =  {
         answer:"JS is invented by Brenden Eich",
         chips:[]
     },
-    restaurants: "We support Chinese, Italian ,SouthIndian , NorthIdian dishes in our restaurant",
-    chips:[]
+    restaurants:{
+
+        answer: "We support Chinese, Italian ,SouthIndian , NorthIdian dishes in our restaurant",
+       
+        }
 };
 
 export default responses;

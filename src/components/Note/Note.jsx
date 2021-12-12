@@ -16,7 +16,7 @@ function Note({note}) {
         <p className="time">{time}</p>      
     </div>
     <div>
-        {chips.length>0 && <Chips data={chips} />}
+        {chips && chips.length>0 && <Chips data={chips} />}
     </div>
    
     </>
