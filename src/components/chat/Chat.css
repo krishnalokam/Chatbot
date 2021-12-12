@@ -6,39 +6,43 @@
     padding: 20px;
     overflow-y: scroll;
     /* border:3px solid rgb(44, 40, 40); */
-    border-top:1px solid blue;
-    border-left: 3px solid blue;
-    border-right: 3px solid blue;
-    border-bottom:1px solid blue;
+    border:3px solid blue;
     border-radius: 10px;
     background-color: white;
 }
 
 .input-area {
-    width: "70%";
+    display: flex;
+    width: 73%;
     margin:0 auto;
-    color:brown
-    /* background-color: blue; */
+    color:white;
+    background-color: white;
 }
 
 .input {
+    flex:5;
     padding: 10px;
-    width: 68%;
     margin:auto;
     border:3px solid blue;
-    background-color: brown;
-    color: gold;
+    background-color: white;    
+    border-radius: 10px;
 }
 
 .input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgb(156, 142, 63);
+    color: rgba(14, 13, 13, 0.589);
     opacity: 1; 
   }
-
+ 
 
 .search {
-    font-size: 2rem;
+    font-size: 1rem;
+    flex:1
     
+}
+
+button:hover {
+   background-color:blue;
+   color:white;
 }
 
 /* style={{width:"57%", margin:"auto" ,padding:"0px 20px"}}  */

@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react';
 import './Chat.css'
 import ChatWindow from "../ChatWindow/ChatWindow"
 import LoginForm from "../LoginForm/LoginForm";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 const Chat = () => {
     
@@ -17,20 +18,22 @@ const Chat = () => {
         setUserName(event.target.value);        
     }
 
-    function handleSubmit(event){   
-        let uName = event.target.userName.value
+    function handleSubmit(username){  
+        console.log("chat "+username);
+        let uName = username ;//event.target.userName.value
         sessionStorage.setItem("userName",uName);        
         setSName(uName);                
     }
 
     return(
-        <>
-            {
-                sName !==""
-                ? <ChatWindow sName={sName}/>          
-                : <LoginForm handleChange ={handleChange} userName={userName} onSubmit={handleSubmit}/>
-            }          
-        </>
+        
+        <Router> 
+            <Routes>
+                <Route exact path="/chat" element = {<ChatWindow sName={sName}/>} />
+                <Route exact path="/" element = {<LoginForm handleChange ={handleChange} userName={userName} onSubmit={handleSubmit}/> } />                        
+            </Routes>
+        </Router>
+    
     );
 };
 
