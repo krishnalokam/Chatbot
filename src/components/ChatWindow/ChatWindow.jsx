@@ -1,7 +1,6 @@
 import React,{useEffect, useRef, useState} from "react"
 import Note from "../Note/Note";
 import moment from "moment";
-import messagesList  from "../../messageList";
 import {getReply,greet} from "../../utils"
 
 import "../chat/Chat.css"
@@ -12,11 +11,11 @@ function ChatWindow({sName}) {
    const [notes,setNotes] = useState([])
 
    useEffect(() => {
-        setNotes([...notes,{author:"Admin",type:"reply",message:"Welcome "+sName+" "+greet(),time:moment().format("hh:mm a")}]);                               
+        setNotes([...notes,{author:"Admin",type:"reply",message:{answer:"Welcome "+sName+" "+greet(),chips:[]},time:moment().format("hh:mm a")}]);                               
     },[]);
     
     function Clear(){
-        setNotes([{author:"Admin",type:"reply",message:"Welcome "+sName+" "+greet(),time:moment().format("hh:mm a")}]);                               
+        setNotes([{author:"Admin",type:"reply",message:{answer:"Welcome "+sName+" "+greet(),chips:[]},time:moment().format("hh:mm a")}]);                               
     }
     function Query() {
         let inputMessge = messageRef.current.value;
@@ -25,12 +24,12 @@ function ChatWindow({sName}) {
             return;         
         }
                 
-        let note = {author:sName,type:"query",message:inputMessge,time:moment().format("hh:mm a")}
+        let note = {author:sName,type:"query",message:{answer:inputMessge,chips:[]},time:moment().format("hh:mm a")}
         messageRef.current.value = "";         
         setNotes((prev) => [...prev,note]);
        
-        let replyMessage = getReply(inputMessge);        
-        let replyNote = {author:"Admin",type:"reply",message:replyMessage,time:moment().format("hh:mm a")}         
+        let replyObject = getReply(inputMessge);        
+        let replyNote = {author:"Admin",type:"reply",message:replyObject,time:moment().format("hh:mm a")}         
         setNotes((prev) => [...prev,replyNote]);
     }
     
@@ -41,9 +40,12 @@ function ChatWindow({sName}) {
                                  
             </div>  
             <div className="input-area"> 
-                <input ref={messageRef} type="text"  className="input"  name="message" placeholder="Ask me anything on weather,cricket, learning,restaurants..."></input>
+                <input ref={messageRef} type="text"  className="input"  name="message" placeholder="Ask me anything on weather,cricket, learning,restaurants..." />
+                
                 <button  className="search" type="submit" onClick={Query} Value="Q" size="30">Q</button>
                 <button  className="search" type="submit" onClick={Clear} Value="C" size="30">C</button>
+                
+                
             </div>
             
         </div>
